@@ -2,7 +2,6 @@ document.querySelector('form').addEventListener('submit', async function (event)
     event.preventDefault(); // Prevent form submission
 
     const formData = new FormData(this);
-    const jsonData = Object.fromEntries(formData.entries());
 
     try {
         const response = await fetch("https://portfoliojosh.onrender.com/contact", { 
@@ -10,7 +9,7 @@ document.querySelector('form').addEventListener('submit', async function (event)
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(jsonData),
+            body: JSON.stringify(jsonData),  // ❌ ERROR: jsonData is not defined
         });
 
         if (response.ok) {
