@@ -64,7 +64,7 @@ document.querySelector('form').addEventListener('submit', async function (event)
     const formData = new FormData(this);
 
     try {
-        const response = await fetch("https://formspree.io/f/mqaegadp", {
+        const response = await fetch("https://portfoliojosh.onrender.com", {
             method: "POST",
             body: formData,
             headers: {
