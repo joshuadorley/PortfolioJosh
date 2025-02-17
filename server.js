@@ -95,16 +95,6 @@ app.post('/contact', async (req, res) => {
     }
 });
 
-// Get All Contacts (Protected Route)
-app.get('/contacts', verifyToken, async (req, res) => {
-    try {
-        const contacts = await Contact.find();
-        res.json(contacts);
-    } catch (error) {
-        res.status(500).json({ error: "Error fetching contacts" });
-    }
-});
-
 // Nodemailer Setup
 const transporter = nodemailer.createTransport({
     service: 'gmail',
