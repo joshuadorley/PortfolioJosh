@@ -64,14 +64,13 @@ document.querySelector('form').addEventListener('submit', async function (event)
     const formData = new FormData(this);
 
     try {
-        const response = await fetch("https://portfoliojosh.onrender.com", {
+        const response = await fetch("https://portfoliojosh.onrender.com/contact", { 
             method: "POST",
-            body: formData,
             headers: {
-                Accept: "application/json",
+                "Content-Type": "application/json",
             },
+            body: JSON.stringify(jsonData),
         });
-
         if (response.ok) {
             alert("Message sent successfully!");
             this.reset();
